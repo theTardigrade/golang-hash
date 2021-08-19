@@ -1,12 +1,12 @@
 package hash
 
 const (
-	uint64Prime uint64 = 0x00000100000001b3
-	uint64Hash  uint64 = 0xcbf29ce484222325
+	uint64Prime  uint64 = 0x00000100000001b3
+	uint64Offset uint64 = 0xcbf29ce484222325
 )
 
 func Uint64(data []byte) (hash uint64) {
-	hash = uint64Hash
+	hash = uint64Offset
 
 	for _, b := range data {
 		hash ^= uint64(b)
