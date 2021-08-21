@@ -5,7 +5,6 @@ import (
 )
 
 const (
-	uint128ModString    = "0x100000000000000000000000000000000"
 	uint128PrimeString  = "0x0000000001000000000000000000013b"
 	uint128OffsetString = "0x6c62272e07bb014262b821756295c58d"
 )
@@ -17,7 +16,7 @@ var (
 )
 
 func init() {
-	uint128Mod.SetString(uint128ModString, 0)
+	uint256Mod.Lsh(big.NewInt(1), 127)
 	uint128Prime.SetString(uint128PrimeString, 0)
 	uint128Offset.SetString(uint128OffsetString, 0)
 }

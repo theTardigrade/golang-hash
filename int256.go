@@ -4,19 +4,14 @@ import (
 	"math/big"
 )
 
-const (
-	int256MinString = "-0x8000000000000000000000000000000000000000000000000000000000000000"
-	int256ModString = "0x8000000000000000000000000000000000000000000000000000000000000000"
-)
-
 var (
 	int256Min = new(big.Int)
 	int256Mod = new(big.Int)
 )
 
 func init() {
-	int256Min.SetString(int256MinString, 0)
-	int256Mod.SetString(int256ModString, 0)
+	int256Mod.Lsh(big.NewInt(1), 255)
+	int256Min.Neg(int256Mod)
 }
 
 func Int256(data []byte) (hash *big.Int) {
