@@ -12,6 +12,15 @@ import (
 )
 
 func main() {
-	fmt.Println(hash.UintString("this is a test"))
-}
+	const input = "this is a simple test"
+
+	fmt.Printf(
+		"%d\n\n%d\n\n%d\n\n%s\n\n%s\n",
+		hash.Uint8String(input),
+		hash.Int8String(input),
+		hash.UintString(input),
+		hash.Uint128String(input),
+		hash.Int128String(input),
+	)
+)
 ```
