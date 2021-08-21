@@ -10,7 +10,7 @@ var (
 )
 
 func init() {
-	int128Mod.Lsh(big.NewInt(1), 127)
+	int128Mod.Lsh(bigOne, 127)
 	int128Min.Neg(int128Mod)
 }
 
@@ -20,9 +20,7 @@ func Int128(data []byte) (hash *big.Int) {
 	delta := new(big.Int)
 	delta.Sub(hash, int128Mod)
 
-	zero := big.NewInt(0)
-
-	if delta.Cmp(zero) >= 0 {
+	if delta.Cmp(bigZero) >= 0 {
 		hash.Add(int128Min, delta)
 	}
 

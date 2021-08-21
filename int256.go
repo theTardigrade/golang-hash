@@ -10,7 +10,7 @@ var (
 )
 
 func init() {
-	int256Mod.Lsh(big.NewInt(1), 255)
+	int256Mod.Lsh(bigOne, 255)
 	int256Min.Neg(int256Mod)
 }
 
@@ -20,9 +20,7 @@ func Int256(data []byte) (hash *big.Int) {
 	delta := new(big.Int)
 	delta.Sub(hash, int256Mod)
 
-	zero := big.NewInt(0)
-
-	if delta.Cmp(zero) >= 0 {
+	if delta.Cmp(bigZero) >= 0 {
 		hash.Add(int256Min, delta)
 	}
 
