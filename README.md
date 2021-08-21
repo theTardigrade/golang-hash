@@ -19,8 +19,8 @@ func main() {
 		hash.Uint8String(input),
 		hash.Int8String(input),
 		hash.UintString(input),
-		hash.Uint128String(input),
-		hash.Int128String(input),
+		hash.Uint256String(input),
+		hash.Int256String(input),
 	)
 )
 ```
