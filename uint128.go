@@ -16,7 +16,7 @@ var (
 )
 
 func init() {
-	uint256Mod.Lsh(bigOne, 127)
+	uint128Mod.Lsh(bigOne, 127)
 	uint128Prime.SetString(uint128PrimeString, 0)
 	uint128Offset.SetString(uint128OffsetString, 0)
 }
