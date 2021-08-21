@@ -27,7 +27,7 @@ func Uint128(data []byte) (hash *big.Int) {
 
 	datum := new(big.Int)
 	for _, d := range data {
-		hash.Xor(hash, datum.SetBytes([]byte{d}))
+		hash.Xor(hash, datum.SetUint64(uint64(d)))
 		hash.Mul(hash, uint128Prime)
 		hash.Mod(hash, uint128Mod)
 	}
