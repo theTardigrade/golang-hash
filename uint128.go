@@ -5,8 +5,8 @@ import (
 )
 
 const (
-	uint128PrimeString  = "0x1000000000000000000013b"
-	uint128OffsetString = "0x6c62272e07bb014262b821756295c58d"
+	uint128PrimeHexString  = "1000000000000000000013b"
+	uint128OffsetHexString = "6c62272e07bb014262b821756295c58d"
 )
 
 var (
@@ -17,8 +17,8 @@ var (
 
 func init() {
 	uint128Mod.Lsh(bigOne, 127)
-	uint128Prime.SetString(uint128PrimeString, 0)
-	uint128Offset.SetString(uint128OffsetString, 0)
+	uint128Prime.SetString(uint128PrimeHexString, 16)
+	uint128Offset.SetString(uint128OffsetHexString, 16)
 }
 
 func Uint128(data []byte) (hash *big.Int) {

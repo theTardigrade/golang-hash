@@ -5,8 +5,8 @@ import (
 )
 
 const (
-	uint512PrimeString  = "0x100000000000000000000000000000000000000000000000000000000000000000000000000000000000157"
-	uint512OffsetString = "0xb86db0b1171f4416dca1e50f309990acac87d059c90000000000000000000d21e948f68a34c192f62ea79bc942dbe7ce182036415f56e34bac982aac4afe9fd9"
+	uint512PrimeHexString  = "100000000000000000000000000000000000000000000000000000000000000000000000000000000000157"
+	uint512OffsetHexString = "b86db0b1171f4416dca1e50f309990acac87d059c90000000000000000000d21e948f68a34c192f62ea79bc942dbe7ce182036415f56e34bac982aac4afe9fd9"
 )
 
 var (
@@ -17,8 +17,8 @@ var (
 
 func init() {
 	uint512Mod.Lsh(bigOne, 512)
-	uint512Prime.SetString(uint512PrimeString, 0)
-	uint512Offset.SetString(uint512OffsetString, 0)
+	uint512Prime.SetString(uint512PrimeHexString, 16)
+	uint512Offset.SetString(uint512OffsetHexString, 16)
 }
 
 func Uint512(data []byte) (hash *big.Int) {
