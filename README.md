@@ -1,6 +1,6 @@
 # golang-hash
 
-This package contains functions that produce non-cryptographic hashes.
+This package contains functions that produce non-cryptographic hashes in various bit sizes. These functions use the Fowler–Noll–Vo hash (FNV-1a) algorithm.
 
 ## Example
 
